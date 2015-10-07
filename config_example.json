@@ -1,0 +1,15 @@
+{
+	"category":"Reston",
+	"subCategory":"AmericanDreamWay",
+	"Directory":"/Volumes/Data_Disk/Pictures/photoDump",
+	"subSubCatagoryDir":"",
+
+	"imgCompressQual" : 80,
+	"thumbCompressQual" : 80,
+	"maxImageSize" : 1024,
+	"thumbSize" : 75,
+	
+	"domainName" : "http://www.benclouser.com",
+	"generatedHtmlDir_server" : "generated/photography",
+	"basePhotoImageDir_server" :"img/photography"
+}
