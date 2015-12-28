@@ -24,6 +24,7 @@ httpDomainName = 'http://www.benclouser.com'
 
 generatedHtmlDir = 'generated/photography'
 basePhotoImageDir = 'img/photography'
+baseWebDir='/var/www'
 webGeneratedHtmlDir = str(httpDomainName + '/' + generatedHtmlDir)
 webBasePhotoImageDir = str(httpDomainName + '/'+ basePhotoImageDir)
 
@@ -186,17 +187,17 @@ for path, images in pathsImageDict.iteritems():
 with pysftp.Connection(domainName, username=credentials.username, password=credentials.password) as sftp:
 
 	# Push html files to 'generated' folder on the server. (that is their final home)
-	with sftp.cd('/var/www/html/'+generatedHtmlDir):
+	with sftp.cd(baseWebDir+'/'+generatedHtmlDir):
 		for file in glob.glob(webDir+'/*.html'):
 			print('Uploading: '+ file + ' to ' + generatedHtmlDir + ' ...')
 			sftp.put(file)  # upload file to public/ on remote
         
     # Now push all directories of images to the 'img/photography' dir on the server. (That is their final home)
-	with sftp.cd('/var/www/html/'+ basePhotoImageDir):
+	with sftp.cd(baseWebDir + '/' + basePhotoImageDir):
 		print glob.glob(webDir+'/*')
 		contents = [ item for item in glob.glob(webDir+'/*') if os.path.isdir(item) ]
 		for item in contents:
-			currentDir = '/var/www/html/'+ basePhotoImageDir+'/'+item.split('/')[-1]
+			currentDir = baseWebDir + '/' + basePhotoImageDir+'/'+item.split('/')[-1]
 			print 'currentDir = ' + currentDir
 
 
