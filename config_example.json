@@ -1,15 +1,18 @@
 {
-	"category":"Reston",
-	"subCategory":"AmericanDreamWay",
-	"Directory":"/Volumes/Data_Disk/Pictures/photoDump",
-	"subSubCatagoryDir":"",
+	"pathToInputDirs":"/Volumes/Data_Disk/Pictures/Maurice",
+	"pathToLocalOutputDir":"/Volumes/Data_Disk/Pictures/web",
+	"subOutputDir":"Maurice",
+	"removeOriginals":false,
 
 	"imgCompressQual" : 80,
 	"thumbCompressQual" : 80,
 	"maxImageSize" : 1024,
 	"thumbSize" : 75,
 	
-	"domainName" : "http://www.benclouser.com",
-	"generatedHtmlDir_server" : "generated/photography",
-	"basePhotoImageDir_server" :"img/photography"
+	"domainName" : "www.benclouser.com",
+	"webServerRootDir":"/var/www/benclouser.com",
+	"generatedHtmlDir_server" :"generated/photography",
+	"basePhotoImageDir_server" :"public/images/photography",
+	"webRequestGeneratedHtmlDir":"generated/photography",
+	"webRequestImageDir":"images/photography"
 }
